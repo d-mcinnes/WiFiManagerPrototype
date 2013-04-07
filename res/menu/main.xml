@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/action_az"
+        android:orderInCategory="25"
+        android:title="@string/action_az" />
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="50"
+        android:title="@string/action_favorite" />
+    <item
+        android:id="@+id/action_relocate"
+        android:orderInCategory="75"
+        android:title="@string/action_relocate" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings" />
+</menu>
