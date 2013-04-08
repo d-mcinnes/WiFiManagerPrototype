@@ -51,7 +51,6 @@ public class MapFavoriteActivity extends Activity {
         		startActivity(new Intent(this, MapAZActivity.class));
                 return true;
         	case R.id.action_favorite:
-        		startActivity(new Intent(this, MapFavoriteActivity.class));
                 return true;
         	case R.id.action_relocate:
         		startActivity(new Intent(this, MapRelocateActivity.class));

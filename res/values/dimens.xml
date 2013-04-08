@@ -8,5 +8,6 @@
     <dimen name="home_icon_padding">20dp</dimen>
     
     <dimen name="sidebar_width">280dp</dimen>
+    <dimen name="sidebar_border_width">2dp</dimen>
 
 </resources>

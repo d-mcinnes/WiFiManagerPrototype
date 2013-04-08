@@ -31,7 +31,6 @@ public class MapRelocateActivity extends Activity {
         		startActivity(new Intent(this, MapFavoriteActivity.class));
                 return true;
         	case R.id.action_relocate:
-        		startActivity(new Intent(this, MapRelocateActivity.class));
                 return true;
             case R.id.action_settings:
             	startActivity(new Intent(this, SettingsActivity.class));

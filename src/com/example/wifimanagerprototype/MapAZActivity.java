@@ -25,7 +25,6 @@ public class MapAZActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         	case R.id.action_az:
-        		startActivity(new Intent(this, MapAZActivity.class));
                 return true;
         	case R.id.action_favorite:
         		startActivity(new Intent(this, MapFavoriteActivity.class));

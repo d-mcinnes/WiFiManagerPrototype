@@ -17,14 +17,19 @@
         android:src="@drawable/prototype_map_blank" />
     
     <LinearLayout
+        android:id="@+id/sidebar_favorites"
         android:layout_width="@dimen/sidebar_width"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:background="@color/background" >
+        android:background="@drawable/sidebar"
+        android:textColor="@color/sidebar_txt" >
          <EditText
 	        android:id="@+id/list_favorites_search"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:descendantFocusability="beforeDescendants"
+    		android:focusableInTouchMode="true"
+	        android:singleLine="true"
 	        android:hint="@string/search"
 	        android:ems="10" >
     	</EditText>
@@ -33,6 +38,14 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
 		    android:listSelector="@drawable/list_selector" /> 
+		<requestFocus />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_toRightOf="@+id/sidebar_favorites"
+        android:layout_width="@dimen/sidebar_border_width"
+        android:layout_height="fill_parent"
+        android:background="@color/sidebar_border" >
     </LinearLayout>
 
 </RelativeLayout>
