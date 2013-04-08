@@ -2,22 +2,27 @@
 <resources>
 
     <string name="app_name">WiFi Manager Prototype</string>
-    <string name="hello_world">Hello world!</string>
     <string name="app_title">WiFi Manager</string>
+    <string name="hello_world">Hello World</string>
+    
     <string name="action_az">A - Z</string>
     <string name="action_favorite">Favorite</string>
     <string name="action_relocate">Relocate</string>
     <string name="action_settings">Settings</string>
     <string name="action_home">Home</string>
+    
     <string name="home_map">Map</string>
-    <string name="home_map_description">This is a description of the map.</string>
+    <string name="home_map_description">Shows WiFi strength superimposed onto a 2D map.</string>
     <string name="home_compass">Compass</string>
-    <string name="home_compass_description">This is the description of the compass.</string>
+    <string name="home_compass_description">A compass which points toward the location where the WiFi signal is strongest.</string>
     <string name="home_camera">Camera</string>
-    <string name="home_camera_description">This is the description for the camera component.</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="title_activity_map">Map Activity</string>
-    <string name="title_activity_compass">CompassActivity</string>
-    <string name="title_activity_camera">CameraActivity</string>
+    <string name="home_camera_description">Displays the WiFi strength superimposed on a camera display.</string>
+    
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_map">Map View</string>
+    <string name="title_activity_compass">Compass View</string>
+    <string name="title_activity_camera">Camera View</string>
+    
+    <string name="prototype">Prototype</string>
 
 </resources>
