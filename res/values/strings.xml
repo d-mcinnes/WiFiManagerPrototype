@@ -4,6 +4,8 @@
     <string name="app_name">WiFi Manager Prototype</string>
     <string name="app_title">WiFi Manager</string>
     <string name="hello_world">Hello World</string>
+    <string name="prototype">Prototype</string>
+    <string name="search">Search</string>
     
     <string name="action_az">A - Z</string>
     <string name="action_favorite">Favorite</string>
@@ -22,7 +24,8 @@
     <string name="title_activity_map">Map View</string>
     <string name="title_activity_compass">Compass View</string>
     <string name="title_activity_camera">Camera View</string>
-    
-    <string name="prototype">Prototype</string>
+    <string name="title_activity_map_favorite">Favorites</string>
+    <string name="title_activity_map_az">A - Z</string>
+    <string name="title_activity_map_relocate">Relocate</string>
 
 </resources>

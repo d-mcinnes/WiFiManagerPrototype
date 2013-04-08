@@ -38,6 +38,18 @@
             android:name="com.example.wifimanagerprototype.CameraActivity"
             android:label="@string/title_activity_camera" >
         </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.MapFavoriteActivity"
+            android:label="@string/title_activity_map_favorite" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.MapAZActivity"
+            android:label="@string/title_activity_map_az" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.MapRelocateActivity"
+            android:label="@string/title_activity_map_relocate" >
+        </activity>
     </application>
 
 </manifest>
