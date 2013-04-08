@@ -2,16 +2,15 @@ package com.example.wifimanagerprototype;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class CameraActivity extends Activity {
+public class CameraAZActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_camera);
+		setContentView(R.layout.activity_camera_az);
 	}
 
 	@Override
@@ -21,14 +20,10 @@ public class CameraActivity extends Activity {
 		return true;
 	}
 	
-    @Override
+	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        	case R.id.action_az:
-            	startActivity(new Intent(this, CameraAZActivity.class));
-            	return true;
             case R.id.action_settings:
-            	startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

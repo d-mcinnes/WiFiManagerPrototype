@@ -37,8 +37,8 @@
 		    android:id="@+id/list_favorites"
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
+		    android:textColor="@color/sidebar_txt"
 		    android:listSelector="@drawable/list_selector" /> 
-		<requestFocus />
     </LinearLayout>
     
     <LinearLayout

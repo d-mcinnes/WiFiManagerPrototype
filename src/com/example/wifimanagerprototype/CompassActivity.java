@@ -17,13 +17,16 @@ public class CompassActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.compass, menu);
+		getMenuInflater().inflate(R.menu.main_no_relocate, menu);
 		return true;
 	}
 	
-    @Override
+	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+        	case R.id.action_az:
+            	startActivity(new Intent(this, CompassAZActivity.class));
+            	return true;
             case R.id.action_settings:
             	startActivity(new Intent(this, SettingsActivity.class));
                 return true;

@@ -15,5 +15,27 @@
         android:scaleType="center"
         android:tileMode="disabled"
         android:src="@drawable/prototype_map_blank" />
+    
+    <LinearLayout
+        android:id="@+id/relocate_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/relocate_height"
+        android:layout_centerVertical="true"
+        android:background="@drawable/sidebar" >
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_above="@+id/relocate_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sidebar_border_width"
+        android:background="@color/sidebar_border" >
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_below="@+id/relocate_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sidebar_border_width"
+        android:background="@color/sidebar_border" >
+    </LinearLayout>
 
 </RelativeLayout>

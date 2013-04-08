@@ -21,6 +21,11 @@ public class MapActivity extends Activity {
 		return true;
 	}
 	
+	@Override
+	public void onAttachedToWindow() {
+	    openOptionsMenu(); 
+	}
+	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

@@ -32,7 +32,7 @@ public class MapFavoriteActivity extends Activity {
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				final String item = (String) parent.getItemAtPosition(position);
+				//final String item = (String) parent.getItemAtPosition(position);
 			}
 		});
 	}

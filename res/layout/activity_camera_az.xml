@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:textColor="@color/text"
-    tools:context=".CameraActivity" >
+    tools:context=".CameraAZActivity" >
 
     <ImageView
         android:contentDescription="@string/prototype"

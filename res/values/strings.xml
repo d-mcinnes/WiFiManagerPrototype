@@ -27,5 +27,7 @@
     <string name="title_activity_map_favorite">Favorites</string>
     <string name="title_activity_map_az">A - Z</string>
     <string name="title_activity_map_relocate">Relocate</string>
+    <string name="title_activity_camera_az">A - Z</string>
+    <string name="title_activity_compass_az">A - Z</string>
 
 </resources>

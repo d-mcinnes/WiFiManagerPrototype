@@ -24,31 +24,53 @@
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.MapActivity"
-            android:label="@string/title_activity_map" >
+            android:label="@string/title_activity_map"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.CompassActivity"
-            android:label="@string/title_activity_compass" >
+            android:label="@string/title_activity_compass"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.CameraActivity"
-            android:label="@string/title_activity_camera" >
+            android:label="@string/title_activity_camera"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.MapFavoriteActivity"
-            android:label="@string/title_activity_map_favorite" >
+            android:label="@string/title_activity_map_favorite"
+            android:theme="@style/noAnimTheme"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.MapAZActivity"
-            android:label="@string/title_activity_map_az" >
+            android:label="@string/title_activity_map_az"
+            android:theme="@style/noAnimTheme"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.MapRelocateActivity"
-            android:label="@string/title_activity_map_relocate" >
+            android:label="@string/title_activity_map_relocate"
+            android:theme="@style/noAnimTheme"
+            android:windowSoftInputMode="stateUnchanged" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.CameraAZActivity"
+            android:theme="@style/noAnimTheme"
+            android:label="@string/title_activity_camera_az"
+            android:windowSoftInputMode="stateUnchanged" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.CompassAZActivity"
+            android:theme="@style/noAnimTheme"
+            android:label="@string/title_activity_compass_az"
+            android:windowSoftInputMode="stateUnchanged" >
         </activity>
     </application>
 
