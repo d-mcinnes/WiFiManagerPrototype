@@ -14,5 +14,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <ImageView
+        android:id="@+id/compass_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/prototype"
+        android:gravity="top"
+        android:scaleType="center"
+        android:src="@drawable/prototype_arrow"
+        android:tileMode="disabled" />
 
 </RelativeLayout>

@@ -6,9 +6,9 @@
         android:color="@color/sidebar_border" /> -->
 	
 	<gradient
-		android:startColor="#f1f1f2"
-		android:centerColor="#e7e7e8"
-		android:endColor="#cfcfcf"
+		android:startColor="#E3f1f1f2"
+		android:centerColor="#E3e7e7e8"
+		android:endColor="#E3cfcfcf"
 		android:angle="270" />
    
 	<!-- <solid android:color="@color/sidebar_bg" /> -->

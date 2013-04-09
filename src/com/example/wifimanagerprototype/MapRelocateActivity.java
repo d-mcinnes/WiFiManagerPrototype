@@ -21,10 +21,10 @@ public class MapRelocateActivity extends Activity {
 		return true;
 	}
 	
-	@Override
+	/**@Override
 	public void onAttachedToWindow() {
 	    openOptionsMenu(); 
-	}
+	}**/
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -6,10 +6,11 @@
 	<color name="line_ruler_colour">#DEDEDE</color>
 	
 	<color name="sidebar_bg">#FFFFFF</color>
-	<color name="sidebar_border">#2E2E2E</color>
+	<color name="sidebar_border">#5A92CE</color>
 	<color name="sidebar_txt">#000000</color>
 	
-	<color name="list_select_gradient_top">#18D7E5</color>
-	<color name="list_select_gradient_center">#16CEDB</color>
-	<color name="list_select_gradient_end">#09ADB9</color>
+	<color name="list_select_txt">#FFFFFF</color>
+	<color name="list_select_gradient_top">#5A92CE</color>
+	<color name="list_select_gradient_center">#396DA5</color>
+	<color name="list_select_gradient_end">#396594</color>
 </resources>

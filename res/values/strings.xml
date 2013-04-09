@@ -7,8 +7,10 @@
     <string name="prototype">Prototype</string>
     <string name="search">Search</string>
     
+    <string name="btn_search">Search</string>
+    
     <string name="action_az">A - Z</string>
-    <string name="action_favorite">Favorite</string>
+    <string name="action_favorite">Favourite</string>
     <string name="action_relocate">Relocate</string>
     <string name="action_settings">Settings</string>
     <string name="action_home">Home</string>
@@ -24,10 +26,14 @@
     <string name="title_activity_map">Map View</string>
     <string name="title_activity_compass">Compass View</string>
     <string name="title_activity_camera">Camera View</string>
-    <string name="title_activity_map_favorite">Favorites</string>
+    <string name="title_activity_map_favorite">Favourites</string>
     <string name="title_activity_map_az">A - Z</string>
     <string name="title_activity_map_relocate">Relocate</string>
+    <string name="title_activity_map_green">Map View</string>
     <string name="title_activity_camera_az">A - Z</string>
     <string name="title_activity_compass_az">A - Z</string>
+    
+    <string name="network_eduroam">eduroam</string>
+    <string name="network_wifi">Wifi</string>
 
 </resources>

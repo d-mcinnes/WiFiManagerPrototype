@@ -62,15 +62,20 @@
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.CameraAZActivity"
-            android:theme="@style/noAnimTheme"
             android:label="@string/title_activity_camera_az"
+            android:theme="@style/noAnimTheme"
             android:windowSoftInputMode="stateUnchanged" >
         </activity>
         <activity
             android:name="com.example.wifimanagerprototype.CompassAZActivity"
-            android:theme="@style/noAnimTheme"
             android:label="@string/title_activity_compass_az"
+            android:theme="@style/noAnimTheme"
             android:windowSoftInputMode="stateUnchanged" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.MapGreenActivity"
+            android:label="@string/title_activity_map_green"
+            android:theme="@style/noAnimTheme" >
         </activity>
     </application>
 
