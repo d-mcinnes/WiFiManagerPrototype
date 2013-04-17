@@ -20,7 +20,7 @@
     
     <!--  No Animation Theme -->
     <style name="noAnimTheme" parent="android:Theme">
-		<item name="android:windowAnimationStyle">@null</item>
+		<!-- <item name="android:windowAnimationStyle">@null</item> -->
 	</style>
 
 </resources>
