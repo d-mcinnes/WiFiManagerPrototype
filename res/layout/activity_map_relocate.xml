@@ -5,7 +5,17 @@
     android:background="@color/background"
     android:textColor="@color/text"
     tools:context=".MapActivity" >
-    <ImageView
+    <EditText
+		android:id="@+id/list_relocate_search"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:descendantFocusability="beforeDescendants"
+	    android:focusableInTouchMode="true"
+		android:singleLine="true"
+		android:hint="@string/search"
+		android:ems="10" >
+	</EditText>
+    <!-- <ImageView
         android:contentDescription="@string/prototype"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -62,6 +72,6 @@
         android:layout_width="fill_parent"
         android:layout_height="@dimen/sidebar_border_width"
         android:background="@color/sidebar_border" >
-    </LinearLayout>
+    </LinearLayout> -->
 
 </RelativeLayout>

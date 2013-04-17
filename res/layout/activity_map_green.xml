@@ -14,6 +14,6 @@
         android:gravity="top"
         android:scaleType="center"
         android:tileMode="disabled"
-        android:src="@drawable/prototype_map_green" />
+        android:src="@drawable/prototype_map_display" />
 
 </RelativeLayout>

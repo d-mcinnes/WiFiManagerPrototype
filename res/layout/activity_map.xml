@@ -16,4 +16,18 @@
         android:tileMode="disabled"
         android:src="@drawable/prototype_map_blank" />
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="161dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/prototype"
+        android:gravity="center"
+        android:src="@drawable/prototype_pin"
+        android:tileMode="disabled"
+        android:onClick="loadHeatmap" />
+
 </RelativeLayout>

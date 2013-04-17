@@ -5,20 +5,10 @@
     android:background="@color/background"
     android:textColor="@color/text"
     tools:context=".MapActivity" >
-    <ImageView
-        android:contentDescription="@string/prototype"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:scaleType="center"
-        android:tileMode="disabled"
-        android:src="@drawable/prototype_map_blank" />
     
     <LinearLayout
         android:id="@+id/sidebar_favorites"
-        android:layout_width="@dimen/sidebar_width"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:background="@drawable/sidebar"
@@ -46,7 +36,7 @@
 		        android:text="@string/btn_search" />
 		</LinearLayout>
 		
-		<LinearLayout
+		<RelativeLayout
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="25dp"
@@ -57,11 +47,19 @@
 		    <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:gravity="center"
+		        android:gravity="left"
 		        android:text="@string/network_eduroam"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-		</LinearLayout>
+		    
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="right"
+		        android:text="@string/network_distance"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+		</RelativeLayout>
 		
     </LinearLayout>
     

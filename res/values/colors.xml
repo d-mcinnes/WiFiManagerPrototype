@@ -4,10 +4,13 @@
 	<color name="title_text">#9BA8C7</color>
 	<color name="text">#FFFFFF</color>
 	<color name="line_ruler_colour">#DEDEDE</color>
+	<color name="transparent">#00000000</color>
 	
-	<color name="sidebar_bg">#FFFFFF</color>
+	<color name="sidebar_bg">#2E2E2E</color>
 	<color name="sidebar_border">#5A92CE</color>
 	<color name="sidebar_txt">#000000</color>
+	
+	<color name="type_btn_bg">#FFFFFF</color>
 	
 	<color name="list_select_txt">#FFFFFF</color>
 	<color name="list_select_gradient_top">#5A92CE</color>

@@ -2,23 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:textColor="@color/text"
     tools:context=".MapActivity" >
-    <ImageView
-        android:contentDescription="@string/prototype"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:scaleType="center"
-        android:tileMode="disabled"
-        android:src="@drawable/prototype_map_blank" />
     
     <LinearLayout
         android:id="@+id/sidebar_favorites"
-        android:layout_width="@dimen/sidebar_width"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:background="@drawable/sidebar"
@@ -46,7 +35,7 @@
 		        android:text="@string/btn_search" />
 		</LinearLayout>
 		
-		<LinearLayout
+		<RelativeLayout
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="25dp"
@@ -58,13 +47,20 @@
 		    <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:gravity="center"
+		        android:gravity="left"
 		        android:text="@string/network_eduroam"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-		</LinearLayout>
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="right"
+		        android:text="@string/network_distance"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+		</RelativeLayout>
 		
-		<LinearLayout
+		<RelativeLayout
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="25dp"
@@ -76,11 +72,18 @@
 		    <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:gravity="center"
+		        android:gravity="left"
 		        android:text="@string/network_wifi"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-		</LinearLayout>
+		    <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="right"
+		        android:text="@string/network_distance"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+		</RelativeLayout>
 		
     </LinearLayout>
     
@@ -89,6 +92,62 @@
         android:layout_width="@dimen/sidebar_border_width"
         android:layout_height="fill_parent"
         android:background="@color/sidebar_border" >
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:baselineAligned="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true" >
+        <LinearLayout 
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:padding="10dp"
+		   android:focusable="true"
+		   android:clickable="true"
+		   android:background="@drawable/search_type_active" >
+           <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="@string/action_all"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout 
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:padding="10dp"
+		   android:focusable="true"
+		   android:clickable="true"
+		   android:background="@drawable/search_type" >
+           <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="@string/action_public"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout 
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:padding="10dp"
+		   android:focusable="true"
+		   android:clickable="true"
+		   android:background="@drawable/search_type" >
+           <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="@string/action_private"
+		        android:textSize="15sp"
+		        android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
