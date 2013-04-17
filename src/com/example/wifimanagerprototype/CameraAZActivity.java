@@ -2,8 +2,10 @@ package com.example.wifimanagerprototype;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class CameraAZActivity extends Activity {
 
@@ -28,6 +30,10 @@ public class CameraAZActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+	
+	public void loadHeatmap(View view) {
+    	startActivity(new Intent(this, CameraActivity.class));
     }
 
 }

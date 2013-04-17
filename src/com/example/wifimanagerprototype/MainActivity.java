@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
     }
     
     public void compassClickEvent(View view) {
-    	startActivity(new Intent(this, CompassActivity.class));
+    	startActivity(new Intent(this, CompassAZActivity.class));
     }
     
     public void cameraClickEvent(View view) {
-    	startActivity(new Intent(this, CameraActivity.class));
+    	startActivity(new Intent(this, CameraAZActivity.class));
     }
 }

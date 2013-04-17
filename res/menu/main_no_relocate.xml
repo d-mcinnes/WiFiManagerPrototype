@@ -6,11 +6,6 @@
         android:title="@string/action_az"
         android:icon="@drawable/btn_az_dark" />
     <item
-        android:id="@+id/action_favorite"
-        android:orderInCategory="50"
-        android:title="@string/action_favorite"
-        android:icon="@drawable/btn_favorite_dark" />
-    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

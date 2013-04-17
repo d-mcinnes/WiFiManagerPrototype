@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -16,6 +18,12 @@ public class SettingsActivity extends Activity {
 		setContentView(com.example.wifimanagerprototype.R.layout.activity_settings);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		Spinner spinner = (Spinner) findViewById(R.id.settings_map_favourite_colour);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.colours, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
 	}
 
 	/**

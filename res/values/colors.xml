@@ -16,4 +16,14 @@
 	<color name="list_select_gradient_top">#5A92CE</color>
 	<color name="list_select_gradient_center">#396DA5</color>
 	<color name="list_select_gradient_end">#396594</color>
+	
+	<string-array name="colours">
+	    <item>Blue</item>
+	    <item>Green</item>
+	    <item>Red</item>
+	    <item>Purple</item>
+	    <item>Orange</item>
+	    <item>Yellow</item>
+	    <item>Pink</item>
+	</string-array>
 </resources>

@@ -35,6 +35,10 @@
     <string name="title_activity_camera_az">A - Z</string>
     <string name="title_activity_compass_az">A - Z</string>
     
+    <string name="settings_favourites_colour">Favourites Colour: </string>
+    <string name="settings_public_colour">Public Colour: </string>
+    <string name="settings_private_colour">Private Colour: </string>
+    
     <string name="network_eduroam">eduroam\nPrivate\nSir Fred Schonell Drive</string>
     <string name="network_wifi">Wifi\nPublic\n123 Fake Address</string>
     <string name="network_distance">50m</string>
