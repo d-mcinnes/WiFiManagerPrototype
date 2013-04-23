@@ -1,23 +1,145 @@
 package com.example.wifimanagerprototype;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends Activity {
+public class MapActivity extends FragmentActivity implements LocationListener {
+	private GoogleMap map;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_map);
+		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+		
+		// Check if Google Play services are available
+		if (status != ConnectionResult.SUCCESS) {
+			// Google Play services Unavailable
+			int requestCode = 10;
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+            dialog.show();
+		} else {
+			// Getting reference to the SupportMapFragment of activity_main.xml
+			SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+			
+			// Getting GoogleMap object from the fragment
+			map = fm.getMap();
+			
+			// Enabling MyLocation Layer of Google Map
+			map.setMyLocationEnabled(true);
+			
+			// Getting LocationManager object from System Service LOCATION_SERVICE
+			LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+			
+			// Creating a criteria object to retrieve provider
+			Criteria criteria = new Criteria();
+			
+			// Getting the name of the best provider
+			String provider = locationManager.getBestProvider(criteria, true);
+			
+			// Getting Current Location
+			Location location = locationManager.getLastKnownLocation(provider);
+			
+			if (location != null) {
+				onLocationChanged(location);
+				}
+			locationManager.requestLocationUpdates(provider, 20000, 0, this);
+		}
+	}
+
+	@Override
+	public void onLocationChanged(Location location) {
+		TextView tvLocation = (TextView) findViewById(R.id.tv_location);
+		
+		// Getting latitude of the current location
+		double latitude = location.getLatitude();
+		
+		// Getting longitude of the current location
+		double longitude = location.getLongitude();
+		
+		// Creating a LatLng object for the current location
+		LatLng latLng = new LatLng(latitude, longitude);
+		
+		// Showing the current location in Google Map
+		map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+		
+		// Zoom in the Google Map
+		map.animateCamera(CameraUpdateFactory.zoomTo(15));
+		
+		// Setting latitude and longitude in the TextView tv_location
+		tvLocation.setText("Latitude:" +  latitude  + ", Longitude:"+ longitude );
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        	case R.id.action_az:
+        		startActivity(new Intent(this, MapAZActivity.class));
+                return true;
+        	case R.id.action_favorite:
+        		startActivity(new Intent(this, MapFavoriteActivity.class));
+                return true;
+        	case R.id.action_relocate:
+        		startActivity(new Intent(this, MapRelocateActivity.class));
+                return true;
+            case R.id.action_settings:
+            	startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
+
+/*public class MapActivity extends Activity {
 	static final LatLng STLUCIACENTRE = new LatLng(-27.497356, 153.013317);
 	static final LatLng STLUCIACENTRE_2 = new LatLng(-27.487356, 153.013317);
 	static final LatLng STLUCIACENTRE_3 = new LatLng(-27.497385, 153.013598);
@@ -96,4 +218,4 @@ public class MapActivity extends Activity {
     	startActivity(new Intent(this, MapGreenActivity.class));
     }
 
-}
+}*/
