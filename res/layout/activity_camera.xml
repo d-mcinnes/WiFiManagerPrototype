@@ -1,20 +1,18 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_camera"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:textColor="@color/text"
-    tools:context=".CameraActivity" >
+    android:orientation="vertical" >
 
-    <ImageView
-        android:contentDescription="@string/prototype"
+    <com.example.wifimanagerprototype.CameraSurfaceView
+        android:id="@+id/cameraSurfaceView"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:scaleType="center"
-        android:tileMode="disabled"
-        android:src="@drawable/prototype_camera_display" />
+        android:layout_height="fill_parent" />
 
-</RelativeLayout>
+    <com.example.wifimanagerprototype.DrawSurfaceView
+        android:id="@+id/drawSurfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    
+</FrameLayout>
