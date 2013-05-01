@@ -27,6 +27,10 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapActivity extends FragmentActivity implements LocationListener {
+	static final LatLng STLUCIACENTRE = new LatLng(-27.497356, 153.013317);
+	static final LatLng STLUCIACENTRE_2 = new LatLng(-27.487356, 153.013317);
+	static final LatLng STLUCIACENTRE_3 = new LatLng(-27.497385, 153.013598);
+	static final LatLng STLUCIACENTRE_4 = new LatLng(-27.49994, 153.013887);
 	private GoogleMap map;
 
 	@Override
@@ -34,6 +38,26 @@ public class MapActivity extends FragmentActivity implements LocationListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+		
+		map.addMarker(new MarkerOptions()
+			.position(STLUCIACENTRE)
+			.title("eduroam")
+			.snippet("joineduroam"));
+		
+		map.addMarker(new MarkerOptions()
+			.position(STLUCIACENTRE_2)
+			.title("joineduroam")
+			.snippet("Connect to Eduroam."));
+		
+		map.addMarker(new MarkerOptions()
+			.position(STLUCIACENTRE_3)
+			.title("network")
+			.snippet("Some network."));
+		
+		map.addMarker(new MarkerOptions()
+			.position(STLUCIACENTRE_4)
+			.title("Hawken")
+			.snippet("Some network."));
 		
 		// Check if Google Play services are available
 		if (status != ConnectionResult.SUCCESS) {
