@@ -13,24 +13,23 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 public class DrawSurfaceView extends View {
 	Point me = new Point(-33.870932d, 151.204727d, "Me");
 	Paint mPaint = new Paint();
 	Matrix transform = new Matrix();
-	private double OFFSET = 0d; // we aren't using this yet, that will come in the next step
+	private double OFFSET = 0d;
 	private double screenWidth, screenHeight = 0d;
 	private Bitmap[] mSpots, mBlips;
 	private Bitmap mRadar;
 
 	public static ArrayList<Point> props = new ArrayList<Point>();
 	static {
-		props.add(new Point(90d, 110.8000, "North Pole"));
-		props.add(new Point(-90d, -110.8000, "South Pole"));
-		props.add(new Point(-33.870932d, 151.8000, "East"));
-		props.add(new Point(-33.870932d, 150.8000, "West"));
+		props.add(new Point(90d, 110.8000, "eduroam"));
+		props.add(new Point(-90d, -110.8000, "edu1south"));
+		props.add(new Point(-33.870932d, 151.8000, "freewifi"));
+		props.add(new Point(-33.870932d, 150.8000, "uqfreewifi"));
 	}
 
 	public DrawSurfaceView(Context c, Paint paint) {
