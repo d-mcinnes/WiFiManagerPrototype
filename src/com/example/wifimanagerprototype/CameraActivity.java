@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -105,6 +107,13 @@ public class CameraActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_no_relocate, menu);
 		return true;
+	}
+	
+	public void onCompassCheck(View view) {
+		//R.id.checkbox_compass.setChecked(false);
+		CheckBox checkbox = (CheckBox) findViewById(R.id.checkbox_compass);
+		checkbox.setChecked(false);
+		startActivity(new Intent(this, CompassTestActivity.class));
 	}
 	
     @Override
