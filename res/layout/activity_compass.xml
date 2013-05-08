@@ -28,5 +28,16 @@
         android:scaleType="center"
         android:src="@drawable/prototype_arrow"
         android:tileMode="disabled" />
+    
+    <ImageView
+        android:contentDescription="@string/prototype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="top"
+        android:tileMode="disabled"
+        android:src="@drawable/btn_info"
+        android:onClick="loadInfo" />
 
 </RelativeLayout>

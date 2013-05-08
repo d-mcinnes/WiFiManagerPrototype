@@ -6,6 +6,7 @@
     android:textColor="@color/text"
     tools:context=".MapActivity" >
     <ImageView
+        android:id="@+id/prototype_image"
         android:contentDescription="@string/prototype"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -14,6 +15,14 @@
         android:gravity="top"
         android:scaleType="center"
         android:tileMode="disabled"
-        android:src="@drawable/prototype_map_display" />
+        android:src="@drawable/prototype_map_display_dots" />
+    
+     <CheckBox android:id="@+id/checkbox_heatmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/checkbox_compass"
+        android:onClick="onHeatmapCheck"/>
 
 </RelativeLayout>

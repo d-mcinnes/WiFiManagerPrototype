@@ -1,7 +1,12 @@
 package com.example.wifimanagerprototype;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +31,8 @@ public class CameraActivity extends Activity {
 	private Sensor mSensor;
 	private DrawSurfaceView mDrawView;
 	LocationManager locMgr;
+	
+	private Activity activity;
 	
 	private final SensorEventListener mListener = new SensorEventListener() {
 		public void onSensorChanged(SensorEvent event) {
@@ -74,6 +81,8 @@ public class CameraActivity extends Activity {
 				// try switching to a different provider
 			}
 		});
+		
+		this.activity = this;
 	}
 	
 	@Override
@@ -131,6 +140,40 @@ public class CameraActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    
+    public Activity mapGetActivity() {
+		return this.activity;
+	}
+    
+    public void loadInfo(View view) {
+    	//System.out.println("DFDSFSFSDFSDFD FSDF DSFSD F SDFDS FF STUFF WORKS.");
+    	// Load Heatmap
+    	
+    	/* Create Info Dialog */
+    	//AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+    	//builder.setMessage("Yeah this is a message")
+    	//		.setTitle("Title");
+    	//AlertDialog dialog = builder.create();
+    	
+    	DialogFragment newFragment = new InfoPaneFragment();
+        newFragment.show(getFragmentManager(), "missiles");
+    }
+    
+	@SuppressLint("ValidFragment")
+	private class InfoPaneFragment extends DialogFragment {
+    	@Override
+    	public Dialog onCreateDialog(Bundle savedInstanceState) {
+    		AlertDialog.Builder builder = new AlertDialog.Builder(mapGetActivity());
+    		builder.setMessage(getString(R.string.info_camera))
+    			   .setTitle("Info");
+    		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	               // User clicked OK button
+    	           }
+    	       });
+			return builder.create();
+    	}
     }
 
 }

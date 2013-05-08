@@ -26,10 +26,10 @@ public class DrawSurfaceView extends View {
 
 	public static ArrayList<Point> props = new ArrayList<Point>();
 	static {
-		props.add(new Point(90d, 110.8000, "eduroam"));
-		props.add(new Point(-90d, -110.8000, "edu1south"));
-		props.add(new Point(-33.870932d, 151.8000, "freewifi"));
-		props.add(new Point(-33.870932d, 150.8000, "uqfreewifi"));
+		props.add(new Point(90d, 110.8000, ""));
+		props.add(new Point(-90d, -110.8000, ""));
+		props.add(new Point(-33.870932d, 151.8000, ""));
+		props.add(new Point(-33.870932d, 150.8000, ""));
 	}
 
 	public DrawSurfaceView(Context c, Paint paint) {

@@ -285,7 +285,7 @@ public class MapActivity extends Activity {
     	@Override
     	public Dialog onCreateDialog(Bundle savedInstanceState) {
     		AlertDialog.Builder builder = new AlertDialog.Builder(mapGetActivity());
-    		builder.setMessage("This is where the info message goes.")
+    		builder.setMessage(getString(R.string.info_map))
     			   .setTitle("Info");
     		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
     	           public void onClick(DialogInterface dialog, int id) {
