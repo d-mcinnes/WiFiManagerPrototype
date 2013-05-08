@@ -38,7 +38,7 @@
                 android:text="@string/btn_search" />
         </LinearLayout>
 
-        <RelativeLayout
+        <!-- <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_selector"
@@ -88,7 +88,15 @@
                 android:text="@string/network_distance"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-        </RelativeLayout>
+        </RelativeLayout>-->
+        
+        <ListView
+		    android:id="@+id/listview_camera_az"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:divider="#b5b5b5"
+        	android:dividerHeight="1dp"
+		    android:listSelector="@drawable/list_selector" /> 
     </LinearLayout>
 
     <LinearLayout
@@ -106,13 +114,15 @@
         android:orientation="horizontal" >
 
         <LinearLayout
+            android:id="@+id/select_camera_all"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/search_type_active"
             android:clickable="true"
             android:focusable="true"
-            android:padding="10dp" >
+            android:padding="10dp"
+            android:onClick="filterAll" >
 
             <TextView
                 android:layout_width="fill_parent"
@@ -124,13 +134,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/select_camera_public"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/search_type"
             android:clickable="true"
             android:focusable="true"
-            android:padding="10dp" >
+            android:padding="10dp"
+            android:onClick="filterPublic" >
 
             <TextView
                 android:layout_width="fill_parent"
@@ -142,13 +154,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/select_camera_private"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/search_type"
             android:clickable="true"
             android:focusable="true"
-            android:padding="10dp" >
+            android:padding="10dp"
+            android:onClick="filterPrivate" >
 
             <TextView
                 android:layout_width="fill_parent"

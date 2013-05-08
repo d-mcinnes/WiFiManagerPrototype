@@ -35,7 +35,7 @@
 		        android:text="@string/btn_search" />
 		</LinearLayout>
 		
-		<RelativeLayout
+		<!-- <RelativeLayout
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="25dp"
@@ -83,7 +83,15 @@
 		        android:text="@string/network_distance"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-		</RelativeLayout>
+		</RelativeLayout> -->
+		
+		<ListView
+		    android:id="@+id/listview_compass_az"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:divider="#b5b5b5"
+        	android:dividerHeight="1dp"
+		    android:listSelector="@drawable/list_selector" /> 
 		
     </LinearLayout>
     
@@ -101,13 +109,15 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true" >
         <LinearLayout 
+           android:id="@+id/select_compass_all"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
            android:padding="10dp"
 		   android:focusable="true"
 		   android:clickable="true"
-		   android:background="@drawable/search_type_active" >
+		   android:background="@drawable/search_type_active"
+		   android:onClick="filterAll" >
            <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
@@ -116,14 +126,16 @@
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
         </LinearLayout>
-        <LinearLayout 
+        <LinearLayout
+           android:id="@+id/select_compass_public"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
            android:padding="10dp"
 		   android:focusable="true"
 		   android:clickable="true"
-		   android:background="@drawable/search_type" >
+		   android:background="@drawable/search_type"
+		   android:onClick="filterPublic" >
            <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
@@ -132,14 +144,16 @@
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
         </LinearLayout>
-        <LinearLayout 
+        <LinearLayout
+           android:id="@+id/select_compass_private"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
            android:padding="10dp"
 		   android:focusable="true"
 		   android:clickable="true"
-		   android:background="@drawable/search_type" >
+		   android:background="@drawable/search_type"
+		   android:onClick="filterPrivate" >
            <TextView
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"

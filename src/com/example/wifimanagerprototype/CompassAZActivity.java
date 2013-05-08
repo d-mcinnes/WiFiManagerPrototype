@@ -1,18 +1,56 @@
 package com.example.wifimanagerprototype;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class CompassAZActivity extends Activity {
+	private final ArrayList<String> listAll = new ArrayList<String>();
+	private final ArrayList<String> listPublic = new ArrayList<String>();
+	private final ArrayList<String> listPrivate = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compass_az);
+		
+		ListView listview = (ListView) findViewById(R.id.listview_compass_az);
+		this.listAll.add(getString(R.string.network_eduroam));
+		this.listAll.add(getString(R.string.network_wifi));
+		this.listPublic.add(getString(R.string.network_wifi));
+		this.listPrivate.add(getString(R.string.network_eduroam));
+		
+		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
+		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				//final String item = (String) parent.getItemAtPosition(position);
+				loadHeatmap(null);
+			}
+		});
+		listview.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    return true;
+                }
+                return false;
+            }
+
+        });
 	}
 
 	@Override
@@ -41,5 +79,59 @@ public class CompassAZActivity extends Activity {
 	public void loadHeatmap(View view) {
     	startActivity(new Intent(this, CompassActivity.class));
     }
+	
+	public void filterAll(View view) {
+		setListAdapter(this.listAll);
+		findViewById(R.id.select_compass_all).setBackgroundResource(R.drawable.search_type_active);
+		findViewById(R.id.select_compass_public).setBackgroundResource(R.drawable.search_type);
+		findViewById(R.id.select_compass_private).setBackgroundResource(R.drawable.search_type);
+	}
+	
+	public void filterPublic(View view) {
+		setListAdapter(this.listPublic);
+		findViewById(R.id.select_compass_all).setBackgroundResource(R.drawable.search_type);
+		findViewById(R.id.select_compass_public).setBackgroundResource(R.drawable.search_type_active);
+		findViewById(R.id.select_compass_private).setBackgroundResource(R.drawable.search_type);
+	}
+	
+	public void filterPrivate(View view) {
+		setListAdapter(this.listPrivate);
+		findViewById(R.id.select_compass_all).setBackgroundResource(R.drawable.search_type);
+		findViewById(R.id.select_compass_public).setBackgroundResource(R.drawable.search_type);
+		findViewById(R.id.select_compass_private).setBackgroundResource(R.drawable.search_type_active);
+	}
+	
+	/** Takes an Array of Strings and sets the ListView to pull it's data from
+	 ** that array.
+	 **/
+	private void setListAdapter(ArrayList<String> list) {
+		ListView listview = (ListView) findViewById(R.id.listview_compass_az);
+		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list));
+	}
+	
+	
+	/** Code from http://www.vogella.com/articles/AndroidListView/article.html **/
+	private class StableArrayAdapter extends ArrayAdapter<String> {
+	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+
+	    public StableArrayAdapter(Context context, int textViewResourceId,
+	        List<String> objects) {
+	      super(context, textViewResourceId, objects);
+	      for (int i = 0; i < objects.size(); ++i) {
+	        mIdMap.put(objects.get(i), i);
+	      }
+	    }
+
+	    @Override
+	    public long getItemId(int position) {
+	      String item = getItem(position);
+	      return mIdMap.get(item);
+	    }
+
+	    @Override
+	    public boolean hasStableIds() {
+	      return true;
+	    }
+	}
 
 }

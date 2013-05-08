@@ -36,7 +36,7 @@
 		        android:text="@string/btn_search" />
 		</LinearLayout>
 		
-		<RelativeLayout
+		<!-- <RelativeLayout
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:padding="25dp"
@@ -59,7 +59,15 @@
 		        android:text="@string/network_distance"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-		</RelativeLayout>
+		</RelativeLayout> -->
+		
+		<ListView
+		    android:id="@+id/listview_favorite"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:divider="#b5b5b5"
+        	android:dividerHeight="1dp"
+		    android:listSelector="@drawable/list_selector" /> 
 		
     </LinearLayout>
     
