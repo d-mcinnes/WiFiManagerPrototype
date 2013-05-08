@@ -25,7 +25,10 @@ public class CameraAZActivity extends Activity {
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+	        case R.id.action_home:
+	    		startActivity(new Intent(this, MainActivity.class));
+	    		return true;
+        	case R.id.action_settings:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

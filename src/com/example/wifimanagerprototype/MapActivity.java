@@ -7,9 +7,11 @@ package com.example.wifimanagerprototype;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-//import android.app.Dialog;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
-//import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +25,7 @@ import com.google.android.gms.maps.MapFragment;
 //import com.google.android.gms.maps.SupportMapFragment;
 //import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 //import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -163,18 +166,25 @@ import com.google.android.gms.maps.model.MarkerOptions;
 //    }
 //}
 
+/** Have to uncomment map stuff, as well as camera stuff in the CameraActivity.java class.
+ ** This should be all you need to uncomment for the new code to work again.
+ **/
+
 public class MapActivity extends Activity {
 	static final LatLng STLUCIACENTRE = new LatLng(-27.497356, 153.013317);
 	static final LatLng STLUCIACENTRE_2 = new LatLng(-27.487356, 153.013317);
 	static final LatLng STLUCIACENTRE_3 = new LatLng(-27.497385, 153.013598);
 	static final LatLng STLUCIACENTRE_4 = new LatLng(-27.49994, 153.013887);
 	private GoogleMap map;
+	private Activity activity;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
+		
+		this.activity = this;
 		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -204,6 +214,13 @@ public class MapActivity extends Activity {
 
 		// Zoom in, animating the camera.
 		map.animateCamera(CameraUpdateFactory.zoomTo(16), 2000, null);
+		
+		map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+			@Override
+			public void onInfoWindowClick(Marker marker) {
+				loadHeatmap(null);
+			}
+		});
 	}
 
 	@Override
@@ -218,9 +235,16 @@ public class MapActivity extends Activity {
 	//    openOptionsMenu(); 
 	//}
 	
+	public Activity mapGetActivity() {
+		return this.activity;
+	}
+	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+	        case R.id.action_home:
+	    		startActivity(new Intent(this, MainActivity.class));
+	    		return true;
         	case R.id.action_az:
         		startActivity(new Intent(this, MapAZActivity.class));
                 return true;
@@ -241,5 +265,34 @@ public class MapActivity extends Activity {
     public void loadHeatmap(View view) {
     	startActivity(new Intent(this, MapGreenActivity.class));
     }
-
+    
+    public void loadInfo(View view) {
+    	//System.out.println("DFDSFSFSDFSDFD FSDF DSFSD F SDFDS FF STUFF WORKS.");
+    	// Load Heatmap
+    	
+    	/* Create Info Dialog */
+    	//AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+    	//builder.setMessage("Yeah this is a message")
+    	//		.setTitle("Title");
+    	//AlertDialog dialog = builder.create();
+    	
+    	DialogFragment newFragment = new InfoPaneFragment();
+        newFragment.show(getFragmentManager(), "missiles");
+    }
+    
+	@SuppressLint("ValidFragment")
+	private class InfoPaneFragment extends DialogFragment {
+    	@Override
+    	public Dialog onCreateDialog(Bundle savedInstanceState) {
+    		AlertDialog.Builder builder = new AlertDialog.Builder(mapGetActivity());
+    		builder.setMessage("This is where the info message goes.")
+    			   .setTitle("Info");
+    		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	               // User clicked OK button
+    	           }
+    	       });
+			return builder.create();
+    	}
+    }
 }

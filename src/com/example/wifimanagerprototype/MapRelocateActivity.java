@@ -29,6 +29,9 @@ public class MapRelocateActivity extends Activity {
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+	        case R.id.action_home:
+	    		startActivity(new Intent(this, MainActivity.class));
+	    		return true;
         	case R.id.action_az:
         		startActivity(new Intent(this, MapAZActivity.class));
                 return true;
