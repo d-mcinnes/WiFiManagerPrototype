@@ -17,12 +17,16 @@
         android:tileMode="disabled"
         android:src="@drawable/prototype_map_display_dots" />
     
-     <CheckBox android:id="@+id/checkbox_heatmap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:text="@string/checkbox_compass"
-        android:onClick="onHeatmapCheck"/>
+     <CheckBox
+         android:id="@+id/checkbox_heatmap"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginBottom="10dp"
+         android:layout_marginRight="10dp"
+         android:background="@color/checkbox_select_background"
+         android:onClick="onHeatmapCheck"
+         android:text="@string/checkbox_compass" />
 
 </RelativeLayout>

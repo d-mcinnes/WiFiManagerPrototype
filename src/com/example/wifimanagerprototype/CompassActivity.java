@@ -62,11 +62,11 @@ public class CompassActivity extends Activity {
     	//		.setTitle("Title");
     	//AlertDialog dialog = builder.create();
     	
-    	DialogFragment newFragment = new InfoPaneFragment();
-        newFragment.show(getFragmentManager(), "missiles");
+    	//DialogFragment newFragment = new InfoPaneFragment();
+        //newFragment.show(getFragmentManager(), "missiles");
     }
     
-	@SuppressLint("ValidFragment")
+	/*@SuppressLint("ValidFragment")
 	private class InfoPaneFragment extends DialogFragment {
     	@Override
     	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -80,6 +80,6 @@ public class CompassActivity extends Activity {
     	       });
 			return builder.create();
     	}
-    }
+    }*/
 
 }

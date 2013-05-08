@@ -10,6 +10,7 @@
 	<color name="sidebar_border">#6188F2</color>
 	<color name="sidebar_txt">#000000</color>
 	
+	<color name="checkbox_select_background">#7A000000</color>
 	<color name="type_btn_bg">#FFFFFF</color>
 	
 	<color name="list_select_txt">#FFFFFF</color>

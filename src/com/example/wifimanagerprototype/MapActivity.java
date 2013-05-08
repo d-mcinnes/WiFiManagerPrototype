@@ -186,7 +186,7 @@ public class MapActivity extends Activity {
 		
 		this.activity = this;
 		
-		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		/*map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 		
 		map.addMarker(new MarkerOptions()
@@ -220,7 +220,7 @@ public class MapActivity extends Activity {
 			public void onInfoWindowClick(Marker marker) {
 				loadHeatmap(null);
 			}
-		});
+		});*/
 	}
 
 	@Override
@@ -276,11 +276,11 @@ public class MapActivity extends Activity {
     	//		.setTitle("Title");
     	//AlertDialog dialog = builder.create();
     	
-    	DialogFragment newFragment = new InfoPaneFragment();
-        newFragment.show(getFragmentManager(), "missiles");
+    	//DialogFragment newFragment = new InfoPaneFragment();
+        //newFragment.show(getFragmentManager(), "missiles");
     }
     
-	@SuppressLint("ValidFragment")
+	/*@SuppressLint("ValidFragment")
 	private class InfoPaneFragment extends DialogFragment {
     	@Override
     	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -294,5 +294,5 @@ public class MapActivity extends Activity {
     	       });
 			return builder.create();
     	}
-    }
+    }*/
 }
