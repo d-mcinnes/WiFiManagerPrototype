@@ -142,23 +142,23 @@ public class MapAZActivity extends Activity {
 	
 	/** Code from http://www.vogella.com/articles/AndroidListView/article.html **/
 	private class StableArrayAdapter extends ArrayAdapter<String> {
-	   //HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 		List<String> data = null;
 
 	    public StableArrayAdapter(Context context, int textViewResourceId,
 	    		List<String> objects) {
 	    	super(context, textViewResourceId, objects);
 	    	this.data = objects;
-	    	//for (int i = 0; i < objects.size(); ++i) {
-	    	//	mIdMap.put(objects.get(i), i);
-	    	//}
+	    	for (int i = 0; i < objects.size(); ++i) {
+	    		mIdMap.put(objects.get(i), i);
+	    	}
 	    }
 
-	    //@Override
-	    //public long getItemId(int position) {
-	    //	String item = getItem(position);
-	    //	return mIdMap.get(item);
-	    //}
+	    @Override
+	    public long getItemId(int position) {
+	    	String item = getItem(position);
+	    	return mIdMap.get(item);
+	    }
 
 	    @Override
 	    public boolean hasStableIds() {
