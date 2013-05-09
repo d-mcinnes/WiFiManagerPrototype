@@ -21,6 +21,7 @@
     <!--  No Animation Theme -->
     <style name="noAnimTheme" parent="android:Theme">
 		<!-- <item name="android:windowAnimationStyle">@null</item> -->
+		<item name="android:windowNoTitle">true</item>
 	</style>
 	
     <!-- No Title Bar Theme -->
