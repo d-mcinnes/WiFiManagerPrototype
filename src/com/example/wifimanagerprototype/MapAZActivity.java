@@ -50,7 +50,8 @@ public class MapAZActivity extends Activity {
 		//list.add("Eduroam");
 		//list.add("WiFi");
 		
-		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
+		//listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
+		listview.setAdapter(new NetworkListArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
 		
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
@@ -147,11 +148,11 @@ public class MapAZActivity extends Activity {
 	    setListAdapter(adapter);*/
 		
 		ListView listview = (ListView) findViewById(R.id.listview_az);
-		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list));
+		listview.setAdapter(new NetworkListArrayAdapter(this, android.R.layout.simple_list_item_1, list));
 	}
 	
 	/** Code from http://www.vogella.com/articles/AndroidListView/article.html **/
-	private class StableArrayAdapter extends ArrayAdapter<String> {
+	/*private class StableArrayAdapter extends ArrayAdapter<String> {
 		HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 		List<String> data = null;
 
@@ -174,8 +175,6 @@ public class MapAZActivity extends Activity {
 	    public boolean hasStableIds() {
 	    	return true;
 	    }
-	    
-	    /** This stuff doesn't work :( **/
 	    
 	    @Override
 	    public View getView(int position, View convertView, ViewGroup parent) {
@@ -215,7 +214,7 @@ public class MapAZActivity extends Activity {
 				return this.distanceText;
 			}
 		}
-	}
+	}*/
 	
 	private class Network<T,D> {
 		private T text;
