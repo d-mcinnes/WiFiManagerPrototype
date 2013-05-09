@@ -25,6 +25,9 @@ public class MapAZActivity extends Activity {
 	private final ArrayList<String> listAll = new ArrayList<String>();
 	private final ArrayList<String> listPublic = new ArrayList<String>();
 	private final ArrayList<String> listPrivate = new ArrayList<String>();
+	//private final ArrayList<Network<String, String>> listAll = new ArrayList<Network<String, String>>();
+	//private final ArrayList<Network<String, String>> listPublic = new ArrayList<Network<String, String>>();
+	//private final ArrayList<Network<String, String>> listPrivate = new ArrayList<Network<String, String>>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +36,17 @@ public class MapAZActivity extends Activity {
 		
 		ListView listview = (ListView) findViewById(R.id.listview_az);
 		//final ArrayList<String> list = new ArrayList<String>();
+		
+		//this.listAll.add(new Network<String, String>(getString(R.string.network_eduroam), getString(R.string.network_distance)));
+		//this.listAll.add(new Network<String, String>(getString(R.string.network_wifi), getString(R.string.network_distance)));
+		//this.listPublic.add(new Network<String, String>(getString(R.string.network_wifi), getString(R.string.network_distance)));
+		//this.listPrivate.add(new Network<String, String>(getString(R.string.network_eduroam), getString(R.string.network_distance)));
+		
 		this.listAll.add(getString(R.string.network_eduroam));
 		this.listAll.add(getString(R.string.network_wifi));
 		this.listPublic.add(getString(R.string.network_wifi));
 		this.listPrivate.add(getString(R.string.network_eduroam));
+		
 		//list.add("Eduroam");
 		//list.add("WiFi");
 		
@@ -179,7 +189,7 @@ public class MapAZActivity extends Activity {
 	    		holder = (ViewHolder) convertView.getTag();
 	    	}
 	    	holder.getMainText().setText(data.get(position));
-	    	holder.getDistanceText().setText(data.get(position));
+	    	holder.getDistanceText().setText(getString(R.string.network_distance));
 	    	return convertView;
 	    }
 	    
@@ -205,6 +215,21 @@ public class MapAZActivity extends Activity {
 				return this.distanceText;
 			}
 		}
+	}
+	
+	private class Network<T,D> {
+		private T text;
+		private D distance;
+		
+		public Network(T text, D distance) {
+			this.text = text;
+			this.distance = distance;
+		}
+		
+		public T getText() {return this.text;}
+		public D getDistance() {return this.distance;}
+		public void setText(T text) {this.text = text;}
+		public void setDistance(D distance) {this.distance = distance;}
 	}
 
 }
