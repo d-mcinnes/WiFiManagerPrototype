@@ -172,7 +172,7 @@ public class MapAZActivity extends Activity {
 	    	ViewHolder holder = null;
 	    	LayoutInflater inflator = getLayoutInflater();
 	    	if(convertView == null) {
-	    		convertView = inflator.inflate(R.layout.list_networks, null);
+	    		convertView = inflator.inflate(R.layout.list_networks, null, false);
 	    		holder = new ViewHolder(convertView);
 	    		convertView.setTag(holder);
 	    	} else {
