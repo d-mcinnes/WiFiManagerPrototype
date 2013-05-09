@@ -15,11 +15,17 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowNoTitle">true</item>
     </style>
     
     <!--  No Animation Theme -->
     <style name="noAnimTheme" parent="android:Theme">
 		<!-- <item name="android:windowAnimationStyle">@null</item> -->
 	</style>
+	
+    <!-- No Title Bar Theme -->
+    <style name="noTitleTheme" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
 </resources>
