@@ -13,7 +13,7 @@
 	<color name="checkbox_select_background">#7A000000</color>
 	<color name="type_btn_bg">#FFFFFF</color>
 	
-	<color name="list_select_txt">#FFFFFF</color>
+	<color name="list_select_txt">#000000</color>
 	<color name="list_select_gradient_top">#5A92CE</color>
 	<color name="list_select_gradient_center">#396DA5</color>
 	<color name="list_select_gradient_end">#396594</color>
