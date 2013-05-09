@@ -33,7 +33,9 @@ public class CameraAZActivity extends Activity {
 		this.listPublic.add(getString(R.string.network_wifi));
 		this.listPrivate.add(getString(R.string.network_eduroam));
 		
-		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
+		//listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
+		
+		listview.setAdapter(new NetworkListArrayAdapter(this, android.R.layout.simple_list_item_1, this.listAll));
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -103,32 +105,7 @@ public class CameraAZActivity extends Activity {
 	 **/
 	private void setListAdapter(ArrayList<String> list) {
 		ListView listview = (ListView) findViewById(R.id.listview_camera_az);
-		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list));
-	}
-	
-	
-	/** Code from http://www.vogella.com/articles/AndroidListView/article.html **/
-	private class StableArrayAdapter extends ArrayAdapter<String> {
-	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-
-	    public StableArrayAdapter(Context context, int textViewResourceId,
-	        List<String> objects) {
-	      super(context, textViewResourceId, objects);
-	      for (int i = 0; i < objects.size(); ++i) {
-	        mIdMap.put(objects.get(i), i);
-	      }
-	    }
-
-	    @Override
-	    public long getItemId(int position) {
-	      String item = getItem(position);
-	      return mIdMap.get(item);
-	    }
-
-	    @Override
-	    public boolean hasStableIds() {
-	      return true;
-	    }
+		listview.setAdapter(new NetworkListArrayAdapter(this, android.R.layout.simple_list_item_1, list));
 	}
 
 }
