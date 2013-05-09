@@ -10,8 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:background="@drawable/sidebar"
-        android:textColor="@color/sidebar_txt" >
+        android:background="@drawable/sidebar" >
 		<LinearLayout
 		    android:id="@+id/list_favorites_search_bar"
 		    android:layout_width="fill_parent"

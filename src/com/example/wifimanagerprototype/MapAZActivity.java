@@ -120,27 +120,45 @@ public class MapAZActivity extends Activity {
 	 ** that array.
 	 **/
 	private void setListAdapter(ArrayList<String> list) {
+		// Add some rows
+	    /*List<HashMap<String, Object>> fillMaps = new ArrayList<HashMap<String, Object>>();
+
+	    HashMap<String, Object> map = new HashMap<String, Object>();
+	    map.put("title", "First title"); // This will be shown in R.id.title
+	    map.put("description", "description 1"); // And this in R.id.description
+	    fillMaps.add(map);
+
+	    map = new HashMap<String, Object>();
+	    map.put("title", "Second title");
+	    map.put("description", "description 2");
+	    fillMaps.add(map);
+
+	    SimpleAdapter adapter = new SimpleAdapter(this, fillMaps, R.layout.row, from, to);
+	    setListAdapter(adapter);*/
+		
 		ListView listview = (ListView) findViewById(R.id.listview_az);
 		listview.setAdapter(new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list));
 	}
 	
 	/** Code from http://www.vogella.com/articles/AndroidListView/article.html **/
 	private class StableArrayAdapter extends ArrayAdapter<String> {
-	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+	   //HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+		List<String> data = null;
 
 	    public StableArrayAdapter(Context context, int textViewResourceId,
 	    		List<String> objects) {
 	    	super(context, textViewResourceId, objects);
-	    	for (int i = 0; i < objects.size(); ++i) {
-	    		mIdMap.put(objects.get(i), i);
-	    	}
+	    	this.data = objects;
+	    	//for (int i = 0; i < objects.size(); ++i) {
+	    	//	mIdMap.put(objects.get(i), i);
+	    	//}
 	    }
 
-	    @Override
-	    public long getItemId(int position) {
-	    	String item = getItem(position);
-	    	return mIdMap.get(item);
-	    }
+	    //@Override
+	    //public long getItemId(int position) {
+	    //	String item = getItem(position);
+	    //	return mIdMap.get(item);
+	    //}
 
 	    @Override
 	    public boolean hasStableIds() {
@@ -149,19 +167,19 @@ public class MapAZActivity extends Activity {
 	    
 	    /** This stuff doesn't work :( **/
 	    
-	    /*@Override
+	    @Override
 	    public View getView(int position, View convertView, ViewGroup parent) {
 	    	ViewHolder holder = null;
 	    	LayoutInflater inflator = getLayoutInflater();
 	    	if(convertView == null) {
-	    		convertView = inflator.inflate(R.layout.list_networks, false);
+	    		convertView = inflator.inflate(R.layout.list_networks, parent);
 	    		holder = new ViewHolder(convertView);
 	    		convertView.setTag(holder);
 	    	} else {
 	    		holder = (ViewHolder) convertView.getTag();
 	    	}
-	    	holder.getMainText().setText(parent[position]);
-	    	holder.getDistanceText().setText(parent[position]);
+	    	holder.getMainText().setText(data.get(position));
+	    	holder.getDistanceText().setText(data.get(position));
 	    	return convertView;
 	    }
 	    
@@ -186,7 +204,7 @@ public class MapAZActivity extends Activity {
 				}
 				return this.distanceText;
 			}
-		}*/
+		}
 	}
 
 }
