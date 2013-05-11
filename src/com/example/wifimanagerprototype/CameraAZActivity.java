@@ -71,7 +71,7 @@ public class CameraAZActivity extends Activity {
 	        case R.id.action_az:
             	return true;
 	        case R.id.action_favorite:
-	        	startActivity(new Intent(this, CameraFavourites.class));
+	        	startActivity(new Intent(this, CameraFavouritesActivity.class));
 	        	return true;
         	case R.id.action_settings:
                 return true;

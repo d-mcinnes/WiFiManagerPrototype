@@ -13,7 +13,7 @@ import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class CameraFavourites extends Activity {
+public class CameraFavouritesActivity extends Activity {
 	private final ArrayList<String> listAll = new ArrayList<String>();
 
 	@Override
@@ -30,7 +30,7 @@ public class CameraFavourites extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				//final String item = (String) parent.getItemAtPosition(position);
-				loadHeatmap(null);
+				loadHeatmap();
 			}
 		});
 		listview.setOnTouchListener(new OnTouchListener() {
@@ -71,8 +71,8 @@ public class CameraFavourites extends Activity {
     }
 	
 
-	public void loadHeatmap(View view) {
-    	startActivity(new Intent(this, CompassActivity.class));
+	public void loadHeatmap() {
+    	startActivity(new Intent(this, CameraActivity.class));
     }
 	
 }

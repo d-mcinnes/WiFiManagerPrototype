@@ -111,7 +111,7 @@
             android:label="@string/title_activity_compass_test" >
         </activity>
         <activity
-            android:name="com.example.wifimanagerprototype.CameraFavourites"
+            android:name="com.example.wifimanagerprototype.CameraFavouritesActivity"
             android:label="@string/title_activity_camera_favourites" >
         </activity>
         <activity
