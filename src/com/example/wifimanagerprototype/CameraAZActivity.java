@@ -68,6 +68,11 @@ public class CameraAZActivity extends Activity {
 	        case R.id.action_home:
 	    		startActivity(new Intent(this, MainActivity.class));
 	    		return true;
+	        case R.id.action_az:
+            	return true;
+	        case R.id.action_favorite:
+	        	startActivity(new Intent(this, CameraFavourites.class));
+	        	return true;
         	case R.id.action_settings:
                 return true;
             default:
