@@ -44,5 +44,7 @@
     <string name="network_wifi">Wifi\nPublic\n123 Fake Address</string>
     <string name="network_distance">50m</string>
     <string name="title_activity_compass_test">CompassTestActivity</string>
+    <string name="title_activity_camera_favourites">CameraFavourites</string>
+    <string name="title_activity_compass_favourites">CompassFavouritesActivity</string>
 
 </resources>

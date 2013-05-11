@@ -110,6 +110,14 @@
             android:name="com.example.wifimanagerprototype.CompassTestActivity"
             android:label="@string/title_activity_compass_test" >
         </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.CameraFavourites"
+            android:label="@string/title_activity_camera_favourites" >
+        </activity>
+        <activity
+            android:name="com.example.wifimanagerprototype.CompassFavouritesActivity"
+            android:label="@string/title_activity_compass_favourites" >
+        </activity>
     </application>
 
 </manifest>
