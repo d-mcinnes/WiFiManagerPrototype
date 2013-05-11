@@ -30,7 +30,7 @@ public class CompassFavouritesActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				//final String item = (String) parent.getItemAtPosition(position);
-				loadHeatmap(null);
+				loadHeatmap();
 			}
 		});
 		listview.setOnTouchListener(new OnTouchListener() {
@@ -71,7 +71,7 @@ public class CompassFavouritesActivity extends Activity {
         }
 	}
 	
-	public void loadHeatmap(View view) {
+	public void loadHeatmap() {
     	startActivity(new Intent(this, CompassActivity.class));
     }
 
