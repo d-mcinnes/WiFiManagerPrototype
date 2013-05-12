@@ -64,6 +64,7 @@ public class CameraFavouritesActivity extends Activity {
 	        case R.id.action_favorite:
 	        	return true;
         	case R.id.action_settings:
+        		startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

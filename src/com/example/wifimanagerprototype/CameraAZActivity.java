@@ -74,6 +74,7 @@ public class CameraAZActivity extends Activity {
 	        	startActivity(new Intent(this, CameraFavouritesActivity.class));
 	        	return true;
         	case R.id.action_settings:
+        		startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
