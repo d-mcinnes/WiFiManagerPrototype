@@ -48,7 +48,7 @@ public class CameraFavouritesActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.camera_favourites, menu);
+		getMenuInflater().inflate(R.menu.main_no_relocate, menu);
 		return true;
 	}
 	
@@ -64,6 +64,7 @@ public class CameraFavouritesActivity extends Activity {
 	        case R.id.action_favorite:
 	        	return true;
         	case R.id.action_settings:
+        		startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
