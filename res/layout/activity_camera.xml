@@ -25,6 +25,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:text="@string/checkbox_compass"
+        android:textColor="@color/text"
         android:onClick="onCompassCheck"/>
     </RelativeLayout>
     

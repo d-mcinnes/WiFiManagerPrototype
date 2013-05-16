@@ -27,6 +27,7 @@
     <string name="info_compass">Compass Info</string>
     <string name="info_camera">Camera Info</string>
     <string name="checkbox_compass">Compass</string>
+    <string name="checkbox_map">Heatmap</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_map">Map View</string>
     <string name="title_activity_compass">Compass View</string>
