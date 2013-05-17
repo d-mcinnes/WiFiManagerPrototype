@@ -17,7 +17,7 @@ Before the library can be used, it must be imported into Eclipse alongside the p
 
 1. File -> Import -> Android -> Existing Android Code into Workspace
 2. Find the library that was downloaded and import it into Eclipse:
-  1. Downloaded library "google-play-services_lib" should be located in "<path-to-adt-bundle>\sdk\extras\google\google_play_services\libproject"
+  1. Downloaded library "google-play-services_lib" should be located in "(path-to-adt-bundle)\sdk\extras\google\google_play_services\libproject"
   2. In Eclipse, click on File -> Import -> Android -> Existing Android Code into Workspace
 3. Define a dependency on the appropriate project:
   1. Right click on the project and select Properties
