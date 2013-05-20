@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.net.wifi.WifiConfiguration;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -26,6 +28,20 @@ public class CompassAZActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compass_az);
+		
+		// Create scanner
+		ScanNetworks scanner = new ScanNetworks();
+		
+		// Get list of configured wifi networks
+		List<WifiConfiguration> configs = scanner.scan(getApplicationContext());
+		String currentSSID;
+		
+		while (configs.iterator().hasNext()) {
+			currentSSID = configs.iterator().next().SSID;
+			if (currentSSID.equals("eduroam")) {
+				Log.d(WIFI_SERVICE, currentSSID);
+			}
+		}
 		
 		ListView listview = (ListView) findViewById(R.id.listview_compass_az);
 		this.listAll.add(getString(R.string.network_eduroam));

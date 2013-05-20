@@ -16,7 +16,7 @@ public class ScanNetworks {
 		wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 		
 		// Get WiFi status
-		info = wifi.getConnectionInfo();
+		//info = wifi.getConnectionInfo();
 		
 		// List available networks
 		List<WifiConfiguration> configs = wifi.getConfiguredNetworks();
