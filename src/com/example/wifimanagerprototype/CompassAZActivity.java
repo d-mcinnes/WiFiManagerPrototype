@@ -30,18 +30,21 @@ public class CompassAZActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compass_az);
 
-		// Create scanner and get list of wifis
+		// Create scanner
 		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-		List<ScanResult> configs = wifi.getScanResults();
-
-		// Get an iterator
-		Iterator<ScanResult> configIterator = configs.iterator();
 		
-		String currentSSID;
-		// Find the eduroam network
-		while (configIterator.hasNext()) {
-			currentSSID = configIterator.next().SSID;
-			this.listAll.add(currentSSID);
+		if (wifi.isWifiEnabled()) {
+			List<ScanResult> configs = wifi.getScanResults();
+			
+			// Get an iterator
+			Iterator<ScanResult> configIterator = configs.iterator();
+			
+			String currentSSID;
+			// Find the eduroam network
+			while (configIterator.hasNext()) {
+				currentSSID = configIterator.next().SSID;
+				this.listAll.add(currentSSID);
+			}
 		}
 		
 		ListView listview = (ListView) findViewById(R.id.listview_compass_az);
