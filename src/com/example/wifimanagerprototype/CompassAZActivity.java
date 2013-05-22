@@ -1,10 +1,11 @@
 package com.example.wifimanagerprototype;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
-import android.net.wifi.WifiConfiguration;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -28,19 +29,19 @@ public class CompassAZActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compass_az);
+
+		// Create scanner and get list of wifis
+		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		List<ScanResult> configs = wifi.getScanResults();
+
+		// Get an iterator
+		Iterator<ScanResult> configIterator = configs.iterator();
 		
-		// Create scanner
-		ScanNetworks scanner = new ScanNetworks();
-		
-		// Get list of configured wifi networks
-		List<WifiConfiguration> configs = scanner.scan(getApplicationContext());
 		String currentSSID;
-		
-		while (configs.iterator().hasNext()) {
-			currentSSID = configs.iterator().next().SSID;
-			if (currentSSID.equals("eduroam")) {
-				Log.d(WIFI_SERVICE, currentSSID);
-			}
+		// Find the eduroam network
+		while (configIterator.hasNext()) {
+			currentSSID = configIterator.next().SSID;
+			this.listAll.add(currentSSID);
 		}
 		
 		ListView listview = (ListView) findViewById(R.id.listview_compass_az);
