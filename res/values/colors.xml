@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#E3E3E3</color>
-	<color name="title_text">#6188F2</color>
-	<color name="text">#000000</color>
+    <color name="background">#333333</color>
+	<color name="title_text">#FFFFFF</color>
+	<color name="text">#99CCFF</color>
 	<color name="line_ruler_colour">#CCCCCC</color>
 	<color name="transparent">#00000000</color>
 	
-	<color name="sidebar_bg">#E3E3E3</color>
+	<color name="sidebar_bg">#333333</color>
 	<color name="sidebar_border">#6188F2</color>
 	<color name="sidebar_txt">#000000</color>
 	

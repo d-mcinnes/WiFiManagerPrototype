@@ -2,7 +2,10 @@ package com.example.wifimanagerprototype;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.CheckBox;
 
 public class CompassTestActivity extends Activity {
 
@@ -10,6 +13,15 @@ public class CompassTestActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compass_test);
+		
+		CheckBox checkbox = (CheckBox) findViewById(R.id.checkbox_compass);
+		checkbox.setChecked(true);
+	}
+	
+	public void onCompassCheck(View view) {
+		//R.id.checkbox_compass.setChecked(false);
+		//startActivity(new Intent(this, CompassTestActivity.class));
+		finish();
 	}
 
 	@Override

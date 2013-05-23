@@ -15,6 +15,15 @@
         android:gravity="top"
         android:scaleType="center"
         android:tileMode="disabled"
-        android:src="@drawable/camera_compass" />
+        android:src="@drawable/camera_scale_600" />
+    
+    <CheckBox android:id="@+id/checkbox_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/checkbox_compass"
+        android:textColor="@color/text"
+        android:onClick="onCompassCheck"/>
 
 </RelativeLayout>

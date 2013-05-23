@@ -23,9 +23,9 @@
     <string name="home_camera_description">Displays the WiFi strength superimposed on a camera display.</string>
 
     <!-- Use \n for newline. -->
-    <string name="info_map">This is where the map information is displayed.\nSelect a WiFi network either on the map or by using the favourites or A - Z menu buttons.</string>
-    <string name="info_compass">Compass Info</string>
-    <string name="info_camera">Camera Info</string>
+    <string name="info_map">Select a WiFi network either on the map or by using the favourites or A - Z menu buttons.</string>
+    <string name="info_compass">Rotate the device to find the strongest WiFi point nearby.</string>
+    <string name="info_camera">Move the Camera to display the location of WiFi hotspots.</string>
     <string name="checkbox_compass">Compass</string>
     <string name="checkbox_map">Heatmap</string>
     <string name="title_activity_settings">Settings</string>
