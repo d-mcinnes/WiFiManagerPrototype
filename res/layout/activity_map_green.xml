@@ -15,7 +15,7 @@
         android:gravity="top"
         android:scaleType="center"
         android:tileMode="disabled"
-        android:src="@drawable/prototype_map_display_dots" />
+        android:src="@drawable/mapdots" />
     
      <CheckBox android:id="@+id/checkbox_heatmap"
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:contentDescription="@string/prototype"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:gravity="top"
         android:tileMode="disabled"

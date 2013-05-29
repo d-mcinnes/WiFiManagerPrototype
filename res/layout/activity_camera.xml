@@ -29,15 +29,21 @@
         android:onClick="onCompassCheck"/>
     </RelativeLayout>
     
-    <ImageView
-        android:contentDescription="@string/prototype"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:tileMode="disabled"
-        android:src="@drawable/btn_info"
-        android:onClick="loadInfo" />
+        android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true" >
+        <ImageView
+	        android:contentDescription="@string/prototype"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:gravity="top"
+	        android:tileMode="disabled"
+	        android:src="@drawable/btn_info"
+	        android:onClick="loadInfo" />
+    </RelativeLayout>
     
 </FrameLayout>

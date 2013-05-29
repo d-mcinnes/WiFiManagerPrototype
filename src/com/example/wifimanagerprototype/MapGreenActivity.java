@@ -35,10 +35,10 @@ public class MapGreenActivity extends Activity {
 		CheckBox checkbox = (CheckBox) findViewById(R.id.checkbox_heatmap);
 		ImageView imagePrototype = (ImageView) findViewById(R.id.prototype_image);
 		if(checkbox.isChecked()) {
-			Drawable d = getResources().getDrawable(R.drawable.prototype_map_display);
+			Drawable d = getResources().getDrawable(R.drawable.map_heat);
 			imagePrototype.setImageDrawable(d);
 		} else {
-			Drawable d = getResources().getDrawable(R.drawable.prototype_map_display_dots);
+			Drawable d = getResources().getDrawable(R.drawable.mapdots);
 			imagePrototype.setImageDrawable(d);
 		}
 	}
